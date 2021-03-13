@@ -7,6 +7,7 @@
 
 import Foundation
 import Tempo
+import Alamofire
 
 /*
  Coordinator for the product list
@@ -32,7 +33,7 @@ class ListCoordinator: TempoCoordinator {
             presenter.present(viewState)
         }
     }
-    
+
     let dispatcher = Dispatcher()
     
     lazy var viewController: ListViewController = {
@@ -43,12 +44,12 @@ class ListCoordinator: TempoCoordinator {
     
     required init() {
         viewState = ListViewState(listItems: [])
-        updateState()
+        requestDeals()
         registerListeners()
     }
-    
+
     // MARK: ListCoordinator
-    
+
     fileprivate func registerListeners() {
         dispatcher.addObserver(ListItemPressed.self) { [weak self] e in
             let alert = UIAlertController(title: "Item selected!", message: "🐶", preferredStyle: .alert)
@@ -56,10 +57,21 @@ class ListCoordinator: TempoCoordinator {
             self?.viewController.present(alert, animated: true, completion: nil)
         }
     }
-    
-    func updateState() {
-        viewState.listItems = (1..<10).map { index in
-            ListItemViewState(title: "Puppies!!!", price: "$9.99", image: UIImage(named: "\(index)"), aisle: "B2")
+
+    // MARK: API
+
+    fileprivate func requestDeals() {
+        API.getProducts() { [weak self] response in
+            switch response {
+            case .success(let products):
+                self?.viewState.listItems = products.map { p in
+                    ListItemViewState(product: p)
+                }
+            case .failure(_):
+                let alert = UIAlertController(title: "Error Refreshing Product Data", message: "Request to refresh product data failed.", preferredStyle: .alert)
+                alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
+                self?.viewController.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }

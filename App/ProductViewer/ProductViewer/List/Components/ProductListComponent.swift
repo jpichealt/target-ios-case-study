@@ -6,6 +6,7 @@
 //
 
 import Tempo
+import Alamofire
 
 struct ProductListComponent: Component {
     var dispatcher: Dispatcher?
@@ -24,10 +25,10 @@ struct ProductListComponent: Component {
     }
 
     func configureView(_ view: ProductListView, item: ListItemViewState) {
-        view.titleLabel.text = item.title
-        view.priceLabel.text = item.price
-        view.productImage.image = item.image
-        view.aisleLabel.text = item.aisle
+        view.titleLabel.text = item.product.title
+        view.priceLabel.text = item.product.regularPrice.displayString
+        view.productImage.image = nil
+        view.aisleLabel.text = item.product.aisle.uppercased()
     }
     
     func selectView(_ view: ProductListView, item: ListItemViewState) {

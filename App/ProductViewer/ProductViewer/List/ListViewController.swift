@@ -18,7 +18,7 @@ class ListViewController: UIViewController {
     }
     
     fileprivate var coordinator: TempoCoordinator!
-    
+
     lazy var collectionView: UICollectionView = {
         let harmonyLayout = HarmonyLayout()
         
