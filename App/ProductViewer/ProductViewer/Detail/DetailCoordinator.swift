@@ -1,65 +1,60 @@
 //
-//  ListCoordinator.swift
+//  DetailCoordinator.swift
 //  ProductViewer
 //
-//  Copyright © 2016 Target. All rights reserved.
+//  Created by Joseph J. Piché on 3/13/21.
+//  Copyright © 2021 Target. All rights reserved.
 //
 
 import Foundation
 import Tempo
 
-/*
- Coordinator for the product list
- */
-class ListCoordinator: TempoCoordinator {
-    
+class DetailCoordinator: TempoCoordinator {
+
     // MARK: Presenters, view controllers, view state.
-    
+
     var presenters = [TempoPresenterType]() {
         didSet {
             updateUI()
         }
     }
-    
-    fileprivate var viewState: ListViewState {
+
+    fileprivate var viewState: DetailViewState {
         didSet {
             updateUI()
         }
     }
-    
+
     fileprivate func updateUI() {
         for presenter in presenters {
             presenter.present(viewState)
         }
     }
-    
+
     let dispatcher = Dispatcher()
-    
-    lazy var viewController: ListViewController = {
-        return ListViewController.viewControllerFor(coordinator: self)
+
+    lazy var viewController: DetailViewController = {
+        return DetailViewController.viewControllerFor(coordinator: self)
     }()
-    
+
     // MARK: Init
-    
+
     required init() {
-        viewState = ListViewState(listItems: [])
+        viewState = DetailViewState(image: nil, price: "", description: "")
         updateState()
         registerListeners()
     }
-    
+
     // MARK: ListCoordinator
-    
+
     fileprivate func registerListeners() {
         dispatcher.addObserver(ListItemPressed.self) { [weak self] e in
-            let alert = UIAlertController(title: "Item selected!", message: "🐶", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Item added to cart!", message: "🐶", preferredStyle: .alert)
             alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
             self?.viewController.present(alert, animated: true, completion: nil)
         }
     }
-    
+
     func updateState() {
-        viewState.listItems = (1..<10).map { index in
-            ListItemViewState(title: "Puppies!!!", price: "$9.99", image: UIImage(named: "\(index)"), aisle: "B2")
-        }
     }
 }

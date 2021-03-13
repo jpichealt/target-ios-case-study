@@ -23,24 +23,24 @@ class ListViewController: UIViewController {
         let harmonyLayout = HarmonyLayout()
         
         harmonyLayout.collectionViewMargins = HarmonyLayoutMargins(top: .narrow, right: .none, bottom: .narrow, left: .none)
-        harmonyLayout.defaultSectionMargins = HarmonyLayoutMargins(top: .narrow, right: .none, bottom: .none, left: .none)
+        harmonyLayout.defaultSectionMargins = HarmonyLayoutMargins(top: .narrow, right: .none, bottom: .half, left: .none)
         
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: harmonyLayout)
-        collectionView.backgroundColor = .targetFadeAwayGrayColor
+        collectionView.backgroundColor = .targetStarkWhiteColor
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.alwaysBounceVertical = true
         
         return collectionView
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addAndPinSubview(collectionView)
         collectionView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
         
-        title = "checkout"
-        
+        title = "Deals List"
+
         let components: [ComponentType] = [
             ProductListComponent()
         ]
