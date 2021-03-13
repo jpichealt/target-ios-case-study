@@ -27,6 +27,8 @@
 		B12DA8BB25FD586B006DAF01 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA8BA25FD586B006DAF01 /* Product.swift */; };
 		B12DA8BE25FD596D006DAF01 /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA8BD25FD596D006DAF01 /* ProductResponse.swift */; };
 		B12DA8C025FD59AD006DAF01 /* ItemNotFoundResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA8BF25FD59AD006DAF01 /* ItemNotFoundResponse.swift */; };
+		B12DA8D325FD6493006DAF01 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12DA8D225FD6493006DAF01 /* AlamofireImage.framework */; };
+		B12DA8D425FD6493006DAF01 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B12DA8D225FD6493006DAF01 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5C0528B23886699002A586D /* Tempo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C0528723886616002A586D /* Tempo.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B12DA8B225FD53CB006DAF01 /* Alamofire.framework in Embed Frameworks */,
+				B12DA8D425FD6493006DAF01 /* AlamofireImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +69,7 @@
 		B12DA8BA25FD586B006DAF01 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		B12DA8BD25FD596D006DAF01 /* ProductResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductResponse.swift; sourceTree = "<group>"; };
 		B12DA8BF25FD59AD006DAF01 /* ItemNotFoundResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNotFoundResponse.swift; sourceTree = "<group>"; };
+		B12DA8D225FD6493006DAF01 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C0528723886616002A586D /* Tempo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tempo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -74,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B12DA8D325FD6493006DAF01 /* AlamofireImage.framework in Frameworks */,
 				C5C0528B23886699002A586D /* Tempo.framework in Frameworks */,
 				B12DA8B125FD53CB006DAF01 /* Alamofire.framework in Frameworks */,
 			);
@@ -117,6 +122,7 @@
 		5B518D921F1010E1005C013B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B12DA8D225FD6493006DAF01 /* AlamofireImage.framework */,
 				B12DA8B025FD53CB006DAF01 /* Alamofire.framework */,
 				C5C0528723886616002A586D /* Tempo.framework */,
 			);

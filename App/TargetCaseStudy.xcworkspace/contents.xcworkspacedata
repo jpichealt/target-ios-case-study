@@ -5,6 +5,9 @@
       location = "group:Alamofire/Alamofire.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:AlamofireImage/AlamofireImage.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:ProductViewer/ProductViewer.xcodeproj">
    </FileRef>
    <FileRef

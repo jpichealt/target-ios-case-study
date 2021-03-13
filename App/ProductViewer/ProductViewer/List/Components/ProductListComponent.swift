@@ -7,6 +7,7 @@
 
 import Tempo
 import Alamofire
+import AlamofireImage
 
 struct ProductListComponent: Component {
     var dispatcher: Dispatcher?
@@ -27,10 +28,13 @@ struct ProductListComponent: Component {
     func configureView(_ view: ProductListView, item: ListItemViewState) {
         view.titleLabel.text = item.product.title
         view.priceLabel.text = item.product.regularPrice.displayString
-        view.productImage.image = nil
         view.aisleLabel.text = item.product.aisle.uppercased()
+
+        item.product.imageUrl.flatMap {
+            view.productImage.af.setImage(withURL: $0)
+        }
     }
-    
+
     func selectView(_ view: ProductListView, item: ListItemViewState) {
         dispatcher?.triggerEvent(ListItemPressed())
     }

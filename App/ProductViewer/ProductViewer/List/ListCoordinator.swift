@@ -21,7 +21,7 @@ class ListCoordinator: TempoCoordinator {
             updateUI()
         }
     }
-    
+
     fileprivate var viewState: ListViewState {
         didSet {
             updateUI()
