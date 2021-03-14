@@ -11,6 +11,8 @@ import Tempo
 
 class DetailCoordinator: TempoCoordinator {
 
+    let product: Product
+
     // MARK: Presenters, view controllers, view state.
 
     var presenters = [TempoPresenterType]() {
@@ -29,6 +31,8 @@ class DetailCoordinator: TempoCoordinator {
         for presenter in presenters {
             presenter.present(viewState)
         }
+
+        viewController.title = viewState.product.title
     }
 
     let dispatcher = Dispatcher()
@@ -39,8 +43,10 @@ class DetailCoordinator: TempoCoordinator {
 
     // MARK: Init
 
-    required init() {
-        viewState = DetailViewState(image: nil, price: "", description: "")
+    required init(for product: Product) {
+        self.product = product
+
+        viewState = DetailViewState(product: product)
         updateState()
         registerListeners()
     }
@@ -48,13 +54,30 @@ class DetailCoordinator: TempoCoordinator {
     // MARK: ListCoordinator
 
     fileprivate func registerListeners() {
-        dispatcher.addObserver(ListItemPressed.self) { [weak self] e in
-            let alert = UIAlertController(title: "Item added to cart!", message: "🐶", preferredStyle: .alert)
+        dispatcher.addObserver(DetailAddToCartPressed.self) { [weak self] e in
+            let alert = UIAlertController(
+                title: "Added to Cart!",
+                message: "Added \(e.product.title) to your cart.",
+                preferredStyle: .alert
+            )
+
+            alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
+            self?.viewController.present(alert, animated: true, completion: nil)
+        }
+
+        dispatcher.addObserver(DetailAddToListPressed.self) { [weak self] e in
+            let alert = UIAlertController(
+                title: "Added to List!",
+                message: "Added \(e.product.title) to your list.",
+                preferredStyle: .alert
+            )
+
             alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
             self?.viewController.present(alert, animated: true, completion: nil)
         }
     }
 
     func updateState() {
+        updateUI()
     }
 }

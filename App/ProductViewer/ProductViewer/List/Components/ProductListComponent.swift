@@ -36,7 +36,9 @@ struct ProductListComponent: Component {
     }
 
     func selectView(_ view: ProductListView, item: ListItemViewState) {
-        dispatcher?.triggerEvent(ListItemPressed())
+        dispatcher?.triggerEvent(
+            ListItemPressed(product: item.product)
+        )
     }
 }
 

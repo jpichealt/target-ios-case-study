@@ -27,7 +27,7 @@ class ListCoordinator: TempoCoordinator {
             updateUI()
         }
     }
-    
+
     fileprivate func updateUI() {
         for presenter in presenters {
             presenter.present(viewState)
@@ -52,9 +52,13 @@ class ListCoordinator: TempoCoordinator {
 
     fileprivate func registerListeners() {
         dispatcher.addObserver(ListItemPressed.self) { [weak self] e in
-            let alert = UIAlertController(title: "Item selected!", message: "🐶", preferredStyle: .alert)
-            alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
-            self?.viewController.present(alert, animated: true, completion: nil)
+            let detailCoordinator = DetailCoordinator(for: e.product)
+            self?.viewController.navigationController?
+                .pushViewController(detailCoordinator.viewController, animated: true)
+        }
+
+        dispatcher.addObserver(ListPullToRefresh.self) { [weak self] e in
+            self?.requestDeals()
         }
     }
 

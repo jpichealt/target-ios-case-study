@@ -9,7 +9,7 @@ import UIKit
 import Tempo
 
 class ListViewController: UIViewController {
-    
+
     class func viewControllerFor(coordinator: TempoCoordinator) -> ListViewController {
         let viewController = ListViewController()
         viewController.coordinator = coordinator
@@ -21,7 +21,7 @@ class ListViewController: UIViewController {
 
     lazy var collectionView: UICollectionView = {
         let harmonyLayout = HarmonyLayout()
-        
+
         harmonyLayout.collectionViewMargins = HarmonyLayoutMargins(top: .narrow, right: .none, bottom: .narrow, left: .none)
         harmonyLayout.defaultSectionMargins = HarmonyLayoutMargins(top: .narrow, right: .none, bottom: .half, left: .none)
         
@@ -33,18 +33,25 @@ class ListViewController: UIViewController {
         return collectionView
     }()
 
+    lazy var refreshControl: UIRefreshControl = {
+        let control = UIRefreshControl()
+        control.addTarget(self, action: #selector(pullToRefreshAction(_:)), for: .valueChanged)
+        return control
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.addAndPinSubview(collectionView)
         collectionView.contentInset = UIEdgeInsets(top: 20.0, left: 0.0, bottom: 0.0, right: 0.0)
-        
+        collectionView.refreshControl = refreshControl
+
         title = "Deals List"
 
         let components: [ComponentType] = [
             ProductListComponent()
         ]
-        
+
         let componentProvider = ComponentProvider(components: components, dispatcher: coordinator.dispatcher)
         let collectionViewAdapter = CollectionViewAdapter(collectionView: collectionView, componentProvider: componentProvider)
         
@@ -53,10 +60,17 @@ class ListViewController: UIViewController {
         ]
 
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-    }
-    
-}
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+
+    // MARK: -
+
+    @objc func pullToRefreshAction(_ sender: Any) {
+        coordinator.dispatcher.triggerEvent(ListPullToRefresh())
+        refreshControl.endRefreshing()
+    }
+}

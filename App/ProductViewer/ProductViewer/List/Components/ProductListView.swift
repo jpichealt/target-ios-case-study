@@ -10,10 +10,10 @@ import Tempo
 
 final class ProductListView: UIView {
     // data views
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var aisleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var productImage: UIImageView!
 
     // display views
     @IBOutlet weak var middleLine: SinglePixelLine!
@@ -26,6 +26,9 @@ extension ProductListView: ReusableNib {
     @nonobjc static let reuseID = "ProductListViewIdentifier"
 
     @nonobjc func prepareForReuse() {
-        
+        aisleLabel.text = nil
+        priceLabel.text = nil
+        titleLabel.text = nil
+        productImage.image = nil
     }
 }

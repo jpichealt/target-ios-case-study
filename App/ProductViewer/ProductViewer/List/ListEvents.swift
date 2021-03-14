@@ -7,4 +7,8 @@
 
 import Tempo
 
-struct ListItemPressed: EventType {}
+struct ListItemPressed: EventType {
+    let product: Product
+}
+
+struct ListPullToRefresh: EventType {}
