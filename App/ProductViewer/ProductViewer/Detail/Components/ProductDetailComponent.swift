@@ -40,7 +40,19 @@ struct ProductDetailComponent {
     }
 
     func configureView(_ view: ProductDetailView, viewState: DetailViewState) {
-        view.priceLabel.text = viewState.product.regularPrice.displayString
+        if let salePrice = viewState.product.salePrice {
+            view.priceLabel.textColor = .targetBullseyeRedColor
+            view.priceLabel.text = salePrice.displayString
+
+            view.regularPriceLabel.text = "reg \(viewState.product.regularPrice.displayString)"
+
+        } else {
+            view.priceLabel.textColor = .targetJetBlackColor
+            view.priceLabel.text = viewState.product.regularPrice.displayString
+
+            view.regularPriceLabel.text = nil
+        }
+
         view.descriptionLabel.text = viewState.product.description
 
         viewState.product.imageUrl.flatMap {

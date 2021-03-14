@@ -42,8 +42,14 @@
                                     <rect key="frame" x="0.0" y="347" width="347" height="50"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$9.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JA5-ST-DEm">
-                                            <rect key="frame" x="8" y="0.0" width="331" height="50"/>
+                                            <rect key="frame" x="8" y="0.0" width="90.5" height="50"/>
                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="32"/>
+                                            <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reg $11.99" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1w3-4f-AYC">
+                                            <rect key="frame" x="106.5" y="22" width="91.5" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -51,8 +57,9 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstItem="JA5-ST-DEm" firstAttribute="top" secondItem="7j0-ia-81A" secondAttribute="top" id="U53-PD-0dO"/>
-                                        <constraint firstAttribute="trailing" secondItem="JA5-ST-DEm" secondAttribute="trailing" constant="8" id="fRu-7E-d5j"/>
+                                        <constraint firstItem="1w3-4f-AYC" firstAttribute="leading" secondItem="JA5-ST-DEm" secondAttribute="trailing" constant="8" id="bbC-GD-EsN"/>
                                         <constraint firstAttribute="bottom" secondItem="JA5-ST-DEm" secondAttribute="bottom" id="hDj-rD-MVX"/>
+                                        <constraint firstAttribute="bottom" secondItem="1w3-4f-AYC" secondAttribute="bottom" constant="4" id="or5-Ro-pVX"/>
                                         <constraint firstItem="JA5-ST-DEm" firstAttribute="leading" secondItem="7j0-ia-81A" secondAttribute="leading" constant="8" id="sud-yv-w4v"/>
                                     </constraints>
                                 </view>
@@ -146,6 +153,7 @@
                 <outlet property="descriptionLabel" destination="yaF-fH-qoR" id="HQL-iJ-gO5"/>
                 <outlet property="priceLabel" destination="JA5-ST-DEm" id="vIf-Kb-WNT"/>
                 <outlet property="productImage" destination="E55-GN-hzw" id="isM-sS-9IC"/>
+                <outlet property="regularPriceLabel" destination="1w3-4f-AYC" id="5g6-m0-ywh"/>
                 <outlet property="scrollView" destination="snf-Qv-CUe" id="iQb-XJ-cUS"/>
             </connections>
             <point key="canvasLocation" x="132.60869565217394" y="130.58035714285714"/>

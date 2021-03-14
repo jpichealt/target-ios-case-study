@@ -27,7 +27,20 @@ struct ProductListComponent: Component {
 
     func configureView(_ view: ProductListView, item: ListItemViewState) {
         view.titleLabel.text = item.product.title
-        view.priceLabel.text = item.product.regularPrice.displayString
+
+        if let salePrice = item.product.salePrice {
+            view.priceLabel.textColor = .targetBullseyeRedColor
+            view.priceLabel.text = salePrice.displayString
+
+            view.regularPriceLabel.text = "reg \(item.product.regularPrice.displayString)"
+
+        } else {
+            view.priceLabel.textColor = .targetJetBlackColor
+            view.priceLabel.text = item.product.regularPrice.displayString
+
+            view.regularPriceLabel.text = nil
+        }
+
         view.aisleLabel.text = item.product.aisle.uppercased()
 
         item.product.imageUrl.flatMap {

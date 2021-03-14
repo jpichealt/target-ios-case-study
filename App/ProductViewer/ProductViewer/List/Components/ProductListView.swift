@@ -12,6 +12,7 @@ final class ProductListView: UIView {
     // data views
     @IBOutlet weak var aisleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var regularPriceLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
 
@@ -28,6 +29,7 @@ extension ProductListView: ReusableNib {
     @nonobjc func prepareForReuse() {
         aisleLabel.text = nil
         priceLabel.text = nil
+        regularPriceLabel.text = nil
         titleLabel.text = nil
         productImage.image = nil
     }

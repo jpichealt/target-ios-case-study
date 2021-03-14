@@ -16,6 +16,7 @@ final class ProductDetailView: UIView {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var regularPriceLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var addToListButton: UIButton!
