@@ -1,6 +1,0 @@
-[submodule "App/Alamofire"]
-	path = App/Alamofire
-	url = https://github.com/Alamofire/Alamofire.git
-[submodule "App/AlamofireImage"]
-	path = App/AlamofireImage
-	url = https://github.com/Alamofire/AlamofireImage.git

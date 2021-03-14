@@ -20,32 +20,30 @@
 		B12DA87D25FD3C62006DAF01 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA87C25FD3C62006DAF01 /* DetailViewController.swift */; };
 		B12DA88025FD3D38006DAF01 /* DetailCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA87F25FD3D38006DAF01 /* DetailCoordinator.swift */; };
 		B12DA88325FD3DEC006DAF01 /* DetailViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA88225FD3DEC006DAF01 /* DetailViewState.swift */; };
-		B12DA8B125FD53CB006DAF01 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12DA8B025FD53CB006DAF01 /* Alamofire.framework */; };
-		B12DA8B225FD53CB006DAF01 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B12DA8B025FD53CB006DAF01 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B12DA8B625FD55CF006DAF01 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA8B525FD55CF006DAF01 /* API.swift */; };
 		B12DA8B925FD5820006DAF01 /* Price.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA8B825FD5820006DAF01 /* Price.swift */; };
 		B12DA8BB25FD586B006DAF01 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA8BA25FD586B006DAF01 /* Product.swift */; };
 		B12DA8BE25FD596D006DAF01 /* ProductResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA8BD25FD596D006DAF01 /* ProductResponse.swift */; };
 		B12DA8C025FD59AD006DAF01 /* ItemNotFoundResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12DA8BF25FD59AD006DAF01 /* ItemNotFoundResponse.swift */; };
-		B12DA8D325FD6493006DAF01 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12DA8D225FD6493006DAF01 /* AlamofireImage.framework */; };
-		B12DA8D425FD6493006DAF01 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B12DA8D225FD6493006DAF01 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B15CF16825FD818500DC357C /* DetailViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15CF16725FD818500DC357C /* DetailViewPresenter.swift */; };
 		B15CF16A25FD836600DC357C /* DetailEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15CF16925FD836600DC357C /* DetailEvents.swift */; };
 		B15CF16F25FD864400DC357C /* ProductDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B15CF16E25FD864400DC357C /* ProductDetailView.xib */; };
 		B15CF17125FD865200DC357C /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15CF17025FD865200DC357C /* ProductDetailView.swift */; };
 		B15CF17325FD888100DC357C /* ProductDetailComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15CF17225FD888100DC357C /* ProductDetailComponent.swift */; };
+		B1B8110325FDC28A004E3472 /* Tempo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1B8110225FDC28A004E3472 /* Tempo.framework */; };
+		B1B8110425FDC28A004E3472 /* Tempo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B1B8110225FDC28A004E3472 /* Tempo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C5C0528B23886699002A586D /* Tempo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5C0528723886616002A586D /* Tempo.framework */; };
+		DDDF2DDD8575ECE180EF324B /* Pods_ProductViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A8FADD25BAF30EA2020FEB /* Pods_ProductViewer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		B12DA8B325FD53CB006DAF01 /* Embed Frameworks */ = {
+		B1B8110525FDC28A004E3472 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B12DA8B225FD53CB006DAF01 /* Alamofire.framework in Embed Frameworks */,
-				B12DA8D425FD6493006DAF01 /* AlamofireImage.framework in Embed Frameworks */,
+				B1B8110425FDC28A004E3472 /* Tempo.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +51,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		11A8FADD25BAF30EA2020FEB /* Pods_ProductViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3465819E2E7B997785132FA8 /* Pods-ProductViewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductViewer.release.xcconfig"; path = "Target Support Files/Pods-ProductViewer/Pods-ProductViewer.release.xcconfig"; sourceTree = "<group>"; };
 		5B259CC61D6630E0001D755F /* ProductViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProductViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B259CC91D6630E0001D755F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B259CD01D6630E0001D755F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +65,7 @@
 		5BEF08151D66333C006BF0C0 /* ListViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewState.swift; sourceTree = "<group>"; };
 		5BEF081E1D663598006BF0C0 /* ProductListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		5BEF08201D6635B2006BF0C0 /* ProductListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductListView.xib; sourceTree = "<group>"; };
+		7F8C6826876443A857A64EAC /* Pods-ProductViewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductViewer.debug.xcconfig"; path = "Target Support Files/Pods-ProductViewer/Pods-ProductViewer.debug.xcconfig"; sourceTree = "<group>"; };
 		B12DA87C25FD3C62006DAF01 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B12DA87F25FD3D38006DAF01 /* DetailCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoordinator.swift; sourceTree = "<group>"; };
 		B12DA88225FD3DEC006DAF01 /* DetailViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewState.swift; sourceTree = "<group>"; };
@@ -80,6 +81,7 @@
 		B15CF16E25FD864400DC357C /* ProductDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailView.xib; sourceTree = "<group>"; };
 		B15CF17025FD865200DC357C /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		B15CF17225FD888100DC357C /* ProductDetailComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailComponent.swift; sourceTree = "<group>"; };
+		B1B8110225FDC28A004E3472 /* Tempo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tempo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5C0528723886616002A586D /* Tempo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Tempo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -88,21 +90,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B12DA8D325FD6493006DAF01 /* AlamofireImage.framework in Frameworks */,
 				C5C0528B23886699002A586D /* Tempo.framework in Frameworks */,
-				B12DA8B125FD53CB006DAF01 /* Alamofire.framework in Frameworks */,
+				B1B8110325FDC28A004E3472 /* Tempo.framework in Frameworks */,
+				DDDF2DDD8575ECE180EF324B /* Pods_ProductViewer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3CBB3DAF9B60FD657F0FB963 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7F8C6826876443A857A64EAC /* Pods-ProductViewer.debug.xcconfig */,
+				3465819E2E7B997785132FA8 /* Pods-ProductViewer.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
 		5B259CBD1D6630E0001D755F = {
 			isa = PBXGroup;
 			children = (
 				5B259CC81D6630E0001D755F /* ProductViewer */,
 				5B259CC71D6630E0001D755F /* Products */,
 				5B518D921F1010E1005C013B /* Frameworks */,
+				3CBB3DAF9B60FD657F0FB963 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +145,11 @@
 		5B518D921F1010E1005C013B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1B8110225FDC28A004E3472 /* Tempo.framework */,
 				B12DA8D225FD6493006DAF01 /* AlamofireImage.framework */,
 				B12DA8B025FD53CB006DAF01 /* Alamofire.framework */,
 				C5C0528723886616002A586D /* Tempo.framework */,
+				11A8FADD25BAF30EA2020FEB /* Pods_ProductViewer.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,10 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B259CD81D6630E0001D755F /* Build configuration list for PBXNativeTarget "ProductViewer" */;
 			buildPhases = (
+				A911E35581E264E0F53428C4 /* [CP] Check Pods Manifest.lock */,
 				5B259CC21D6630E0001D755F /* Sources */,
 				5B259CC31D6630E0001D755F /* Frameworks */,
 				5B259CC41D6630E0001D755F /* Resources */,
-				B12DA8B325FD53CB006DAF01 /* Embed Frameworks */,
+				A088308F1A374A32AA186399 /* [CP] Embed Pods Frameworks */,
+				B1B8110525FDC28A004E3472 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +296,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A088308F1A374A32AA186399 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ProductViewer/Pods-ProductViewer-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ProductViewer/Pods-ProductViewer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A911E35581E264E0F53428C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ProductViewer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B259CC21D6630E0001D755F /* Sources */ = {
@@ -429,6 +491,7 @@
 		};
 		5B259CD91D6630E0001D755F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F8C6826876443A857A64EAC /* Pods-ProductViewer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProductViewer/Info.plist;
@@ -443,6 +506,7 @@
 		};
 		5B259CDA1D6630E0001D755F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3465819E2E7B997785132FA8 /* Pods-ProductViewer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ProductViewer/Info.plist;

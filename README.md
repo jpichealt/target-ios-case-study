@@ -1,3 +1,9 @@
+# Joseph Piché’s Response for Target iOS Case Study
+
+### Setup
+
+This project now includes Alamofire And AlamofireImage dependencies via cocoapods. The `Pods` directory is committed to the repo, so the project should build and run without running any cocoapods commands after pulling it down.
+
 # Target iOS Case Study
 
 
