@@ -35,7 +35,7 @@ class ListViewController: UIViewController {
 
     lazy var refreshControl: UIRefreshControl = {
         let control = UIRefreshControl()
-        control.addTarget(self, action: #selector(pullToRefreshAction(_:)), for: .valueChanged)
+        control.addTarget(self, action: #selector(pullToRefreshAction), for: .valueChanged)
         return control
     }()
 
@@ -69,7 +69,7 @@ class ListViewController: UIViewController {
 
     // MARK: -
 
-    @objc func pullToRefreshAction(_ sender: Any) {
+    @objc func pullToRefreshAction() {
         coordinator.dispatcher.triggerEvent(ListPullToRefresh())
         refreshControl.endRefreshing()
     }

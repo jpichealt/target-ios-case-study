@@ -29,11 +29,23 @@ class DetailViewController: UIViewController {
         return view
     }()
 
+    lazy var shareButton: UIBarButtonItem = {
+        return UIBarButtonItem(
+            barButtonSystemItem: .action,
+            target: self,
+            action: #selector(shareAction)
+        )
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         addAndPinRootSubview(detailView)
         view.backgroundColor = .targetStarkWhiteColor
+
+        navigationItem.rightBarButtonItems = [
+            shareButton
+        ]
 
         let component = ProductDetailComponent(dispatcher: coordinator.dispatcher)
 
@@ -46,5 +58,11 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
 
         navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+
+    // MARK: -
+
+    @objc func shareAction() {
+        coordinator.dispatcher.triggerEvent(DetailShareAction())
     }
 }

@@ -15,3 +15,5 @@ struct DetailAddToCartPressed: EventType {
 struct DetailAddToListPressed: EventType {
     let product: Product
 }
+
+struct DetailShareAction: EventType {}

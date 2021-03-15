@@ -8,10 +8,10 @@
 
 import Foundation
 import Tempo
+import Alamofire
+import AlamofireImage
 
 class DetailCoordinator: TempoCoordinator {
-
-    let product: Product
 
     // MARK: Presenters, view controllers, view state.
 
@@ -44,8 +44,6 @@ class DetailCoordinator: TempoCoordinator {
     // MARK: Init
 
     required init(for product: Product) {
-        self.product = product
-
         viewState = DetailViewState(product: product)
         updateState()
         registerListeners()
@@ -75,9 +73,40 @@ class DetailCoordinator: TempoCoordinator {
             alert.addAction( UIAlertAction(title: "OK", style: .cancel, handler: nil) )
             self?.viewController.present(alert, animated: true, completion: nil)
         }
+
+        dispatcher.addObserver(DetailShareAction.self) { [weak self] e in
+            guard let self = self else { return }
+            let price = self.viewState.product.salePrice ?? self.viewState.product.regularPrice
+            let shareText = "\(self.viewState.product.title) is only \(price.displayString) at Target!"
+            let productUrl = URL(string: "http://example.com/targetdeals/product/\(self.viewState.product.id)")!
+
+            if let url = self.viewState.product.imageUrl {
+                AF.request(url)
+                    .responseImage { [weak self] response in
+                    switch response.result {
+                    case .success(let image):
+                        let items: [Any] = [shareText, productUrl, image]
+                        self?.shareItems(items)
+                    case .failure:
+                        let items: [Any] = [shareText, productUrl]
+                        self?.shareItems(items)
+                    }
+                }
+            } else {
+                let items: [Any] = [shareText, productUrl]
+                self.shareItems(items)
+            }
+        }
     }
 
     func updateState() {
         updateUI()
+    }
+
+    // MARK: - Private helper functions
+
+    private func shareItems(_ items: [Any]) {
+        let activity = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        viewController.present(activity, animated: true, completion: nil)
     }
 }
